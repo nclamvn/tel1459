@@ -21,74 +21,86 @@
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(design/fonts/jetbrains-mono-vietnamese-500-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(design/fonts/jetbrains-mono-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(design/fonts/jetbrains-mono-vietnamese-600-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
-:root{--ink:#0B0F19;--ink2:#394150;--mut:#6B7280;--line:#E7E9EE;--soft:#F5F6F8;--soft2:#EEF0F3;--bg:#fff;--acc:#2451D6;--acc-soft:#EEF2FF;
---ok:#167A4A;--ok-soft:#E7F4EC;--so:#2451D6;--sans:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+:root{--ink:#141416;--ink2:#4A4A4F;--mut:#8A8A8E;--line:#ECECEA;--soft:#FBFBF8;--soft2:#F4F4F0;--bg:#fff;--acc:#CC2A53;--acc-soft:#FBEFF2;--amber:#D9A065;
+--ok:#141416;--ok-soft:#F4F4F0;--so:#B9803F;--sans:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}img{display:block;max-width:100%}
-.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,56px)}
 .mono{font-family:var(--mono)}.mut{color:var(--mut)}
-.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
-.top .in{display:flex;align-items:center;gap:12px;height:64px}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.top .in{display:flex;align-items:center;gap:12px;height:58px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
-.brand img{width:30px;height:30px;flex:none}.brand b{display:block;font-weight:600;font-size:15px;letter-spacing:-.01em;line-height:1.2;white-space:nowrap}
-.brand small{display:block;font:500 11px/1.3 var(--mono);color:var(--mut);letter-spacing:.06em}
+.brand img{width:28px;height:28px;flex:none}.brand b{display:block;font-weight:500;font-size:14.5px;letter-spacing:-.01em;line-height:1.2;white-space:nowrap}
+.brand small{display:block;font:400 10.5px/1.3 var(--mono);color:var(--mut);letter-spacing:.14em}
 .crumb{display:flex;align-items:center;gap:10px;color:var(--mut);font-size:14px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .crumb:before{content:'';width:1px;height:20px;background:var(--line);flex:none}
 .sp{flex:1}.links{display:flex;gap:2px}.links a{padding:8px 12px;border-radius:8px;text-decoration:none;font-size:14px;color:var(--ink2);font-weight:500}
 .links a:hover{background:var(--soft);color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:#fff;
-font:600 14px/1 var(--sans);color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap;transition:border-color .15s,background .15s}
-.btn:hover{border-color:#C6CBD3}.btn.pri{background:var(--ink);border-color:var(--ink);color:#fff}.btn.pri:hover{background:#232A38;border-color:#232A38}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:8px;border:1px solid #E2E2E0;background:#fff;
+font:500 14px/1 var(--sans);color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap;transition:border-color .15s,background .15s}
+.btn:hover{border-color:#C9C9C6}.btn.pri{background:var(--ink);border-color:var(--ink);color:#fff}.btn.pri:hover{background:#2A2A2E;border-color:#2A2A2E}
 .btn.sm{height:34px;padding:0 13px;font-size:13px;border-radius:8px}.btn svg{width:16px;height:16px;flex:none}
-.btn[aria-disabled=true]{color:#A0A6B1;border-style:dashed;pointer-events:none}
-.eye{font:500 12px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
-h1{font-size:clamp(36px,5.2vw,60px);line-height:1.04;letter-spacing:-.04em;font-weight:700;margin:16px 0 18px}
-h2{font-size:clamp(24px,2.6vw,30px);letter-spacing:-.028em;line-height:1.2;margin:0;font-weight:700}
-h3{font-size:18px;letter-spacing:-.015em;line-height:1.35;margin:0;font-weight:600}
-.lead{font-size:18px;line-height:1.65;color:var(--ink2);max-width:720px;margin:0}
-section{padding:72px 0;border-top:1px solid var(--line)}section.first{border-top:0}
+.btn[aria-disabled=true]{color:#B5B5B8;border-style:dashed;pointer-events:none}
+.eye{font:400 11px/1.75 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+h1{font-size:clamp(46px,7.6vw,100px);line-height:.98;letter-spacing:-.05em;font-weight:500;margin:0}
+h2{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.025em;line-height:1.22;margin:0;font-weight:500}
+h3{font-size:17px;letter-spacing:-.012em;line-height:1.35;margin:0;font-weight:500}
+.lead{font-size:17px;line-height:1.62;color:var(--ink2);max-width:640px;margin:0}
+section{padding:clamp(48px,7vw,80px) 0;border-top:1px solid var(--line)}section.first{border-top:0}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}.sh p{margin:6px 0 0;color:var(--mut);max-width:640px}
-.chip{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:999px;font:600 11.5px/1 var(--sans);white-space:nowrap}
-.chip:before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
-.chip.xong{background:var(--ok-soft);color:var(--ok)}.chip.so-bo{background:var(--acc-soft);color:var(--so)}.chip.soan{background:var(--soft);color:var(--mut)}
-.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mut);font-size:13.5px}.foot .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:var(--mut)}
+.chip:before{content:'';width:7px;height:7px;border-radius:50%;background:#D4D4D2}
+.chip.xong{color:var(--ink)}.chip.xong:before{background:var(--acc)}.chip.so-bo:before{background:var(--amber)}
+.foot{border-top:1px solid var(--line);padding:28px 0 52px;font:400 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.foot .r{color:var(--ink)}.foot .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.wrap{padding:0 18px}.links{display:none}section{padding:52px 0}.lead{font-size:16.5px}.brand small{display:none}}
 
-.hero{padding:72px 0 64px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
-.hero .by{margin:22px 0 0;font-size:15px;color:var(--ink2)}.hero .by b{font-weight:600;color:var(--ink)}
-.hero .cta{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
-.map{border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
-.map .r{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:10px;padding:7px 0}
-.map .r>span{font:600 12px var(--mono);color:var(--mut)}.map .cells{display:flex;gap:6px;flex-wrap:wrap}
-.map a,.map i{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font:600 12px var(--mono);text-decoration:none;font-style:normal}
-.map .xong{background:var(--ink);color:#fff}.map .so-bo{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
-.map .soan{color:#A0A6B1;box-shadow:inset 0 0 0 1px var(--line);background:var(--soft)}
-.map a:hover{transform:translateY(-1px)}.map .lg{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mut)}
-.map .lg span{display:flex;align-items:center;gap:7px}.map .lg i{width:12px;height:12px;border-radius:3px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats div{padding:22px 0 22px 22px;border-left:1px solid var(--line)}.stats div:first-child{border-left:0;padding-left:0}
-.stats b{display:block;font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.1}.stats span{font-size:13.5px;color:var(--mut)}
-.ch{padding:64px 0 8px;border-top:0}.ch+.ch{border-top:1px solid var(--line)}
-.ch-h{display:grid;grid-template-columns:72px 1fr;gap:8px;margin-bottom:22px}.ch-h .num{font:600 15px var(--mono);color:var(--acc);padding-top:6px}
-.ch-h p{margin:6px 0 0;color:var(--mut);font-size:14.5px}
+.mt{display:flex;justify-content:space-between;gap:24px;padding:clamp(28px,4vw,44px) 0 0}.mt .r{text-align:right}
+.hero{padding:clamp(28px,4vw,44px) 0 clamp(28px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.leg{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:clamp(18px,2.4vw,28px)}
+.hero .say{padding-top:clamp(4px,1vw,12px)}.hero .say h2{margin-bottom:12px}.hero .by{margin:14px 0 0;font-size:15px;color:var(--ink2)}.hero .by b{font-weight:500;color:var(--ink)}
+.hero .cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.band{position:relative;max-width:1600px;margin:0 auto;overflow:hidden}.band img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:50% 46%}
+.band:before,.band:after{content:'';position:absolute;left:0;right:0;height:16%;z-index:1;pointer-events:none}.band:before{top:0;background:linear-gradient(#fff,rgba(255,255,255,0))}.band:after{bottom:0;background:linear-gradient(rgba(255,255,255,0),#fff)}
+.band .tag{position:absolute;left:50%;top:54%;z-index:2;display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:6px;background:#fff;box-shadow:0 0 0 1px var(--line);font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.band .tag i{width:16px;height:16px;border-radius:50%;background:var(--acc);color:#fff;font:600 9.5px/16px var(--mono);font-style:normal;text-align:center;letter-spacing:0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:16px 16px 14px;border-left:1px solid var(--line);min-width:0}.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-size:clamp(26px,3vw,34px);font-weight:500;letter-spacing:-.03em;line-height:1.1}.stats b small{font-size:.42em;color:var(--mut);margin-left:4px;letter-spacing:0;font-weight:500}
+.stats span{display:flex;align-items:center;gap:7px;margin-top:6px;font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats span:before{content:'';flex:none;width:6px;height:6px;border-radius:50%;background:#B5B5B8}.stats div:first-child span{color:var(--ink)}.stats div:first-child span:before{background:var(--acc)}
+.stats div:after{content:'';display:block;width:22px;height:2px;margin-top:9px;border-radius:2px;background:var(--amber)}
+.cards{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;padding:16px 0 0}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px}
+.card>header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#6E6E72}.card>header span:last-child{color:#A7A7AB}
+.map .r{display:grid;grid-template-columns:30px 1fr;align-items:center;gap:10px;padding:5px 0}
+.map .r>span{font:400 11px var(--mono);letter-spacing:.08em;color:var(--mut)}.map .cells{display:flex;gap:6px;flex-wrap:wrap}
+.map .cells a,.map .cells i{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font:500 12px var(--mono);text-decoration:none;font-style:normal}
+.map .cells .xong{background:var(--ink);color:#fff}.map .cells .so-bo{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.map .cells .soan{color:#B5B5B8;box-shadow:inset 0 0 0 1px var(--line);background:#fff}
+.map .cells a:hover{transform:translateY(-1px)}.map .lg{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.dung ol{list-style:none;margin:0;padding:0;counter-reset:d}.dung li{display:grid;grid-template-columns:30px minmax(0,1fr);padding:9px 0;border-top:1px solid var(--line);counter-increment:d;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.dung li:first-child{border-top:0;padding-top:0}.dung li:before{content:counter(d,decimal-leading-zero);font:400 11px/2 var(--mono);color:var(--acc)}.dung li b{color:var(--ink);font-weight:500}
+.dung kbd{font:500 11.5px var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;background:#fff}
+.ch{padding:clamp(48px,6vw,72px) 0 8px;border-top:0}.ch+.ch{border-top:1px solid var(--line)}
+.ch-h{display:grid;grid-template-columns:72px 1fr;gap:8px;margin-bottom:18px}.ch-h .num{font:400 12px var(--mono);letter-spacing:.1em;color:var(--acc);padding-top:9px}
+.ch-h p{margin:6px 0 0;font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 .tiet{list-style:none;margin:0 0 0 72px;padding:0}
-.t{display:grid;grid-template-columns:176px minmax(0,1fr) auto;gap:24px;align-items:center;padding:20px 0;border-top:1px solid var(--line)}
+.t{display:grid;grid-template-columns:176px minmax(0,1fr) auto;gap:24px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
 .t:first-child{border-top:0}
-.t .th{aspect-ratio:3/2;border-radius:10px;overflow:hidden;background:var(--soft);display:block}
-.t .th img{width:100%;height:100%;object-fit:cover}.t .th.trong{display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--line);font:600 12px var(--mono);color:#A0A6B1}
-.t .k{font:500 12px var(--mono);color:var(--mut);letter-spacing:.02em}.t h3{margin:4px 0 6px}.t h3 a{text-decoration:none}.t h3 a:hover{text-decoration:underline}
-.t p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.55}.t .pt{margin-top:8px;font:500 12.5px/1.5 var(--mono);color:var(--mut)}
-.t .act{display:flex;flex-direction:column;align-items:flex-end;gap:10px}.t .act .b{display:flex;gap:8px}
-.cach{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cach div{border:1px solid var(--line);border-radius:14px;padding:22px}
-.cach b{font:600 13px var(--mono);color:var(--acc)}.cach h3{margin:10px 0 8px}.cach p{margin:0;color:var(--ink2);font-size:14.5px}
-.cach kbd{font:600 12px var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;background:#fff}
-.ng{display:grid;grid-template-columns:1fr 1fr;gap:48px}.ng ul{margin:0;padding:0;list-style:none}.ng li{padding:12px 0;border-top:1px solid var(--line);color:var(--ink2);font-size:15px}
-.ng li:first-child{border-top:0;padding-top:0}
-@media (max-width:980px){.hero{grid-template-columns:1fr;gap:40px;padding-top:48px}.t{grid-template-columns:120px minmax(0,1fr)}.t .act{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}
-.tiet{margin-left:0}.ch-h{grid-template-columns:52px 1fr}.cach{grid-template-columns:1fr}.ng{grid-template-columns:1fr;gap:28px}}
-@media (max-width:600px){.t .th{aspect-ratio:16/9}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
-.t{grid-template-columns:1fr;gap:14px}.t .th{max-width:100%}.t .act{flex-wrap:wrap;gap:10px}.map a,.map i{width:30px;height:30px}}
+.t .th{aspect-ratio:3/2;border-radius:10px;overflow:hidden;background:var(--soft);display:block;box-shadow:inset 0 0 0 1px var(--line)}
+.t .th img{width:100%;height:100%;object-fit:cover}.t .th.trong{display:grid;place-items:center;font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#B5B5B8}
+.t .k{font:400 10.5px var(--mono);color:var(--mut);letter-spacing:.14em;text-transform:uppercase}.t h3{margin:5px 0 6px;font-size:18px}.t h3 a{text-decoration:none}.t h3 a:hover{text-decoration:underline}
+.t p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.55}.t .pt{margin-top:8px;font:400 11.5px/1.5 var(--mono);color:var(--mut)}
+.t .act{display:flex;flex-direction:column;align-items:flex-end;gap:12px}.t .act .b{display:flex;gap:8px}
+.t.soan h3,.t.soan p{color:#A7A7AB}
+.ng{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,26px) clamp(20px,2.4vw,34px)}.ng>div{display:grid;grid-template-columns:30px minmax(0,1fr)}
+.ng .n{font:400 11.5px/1.9 var(--mono);color:var(--acc)}.ng p{margin:0;font-size:14px;line-height:1.55;color:var(--ink2)}.ng p b{display:block;color:var(--ink);font-weight:500;font-size:15.5px;margin-bottom:4px}
+@media (max-width:1100px){.ng{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.hero{grid-template-columns:1fr;gap:28px}.cards{grid-template-columns:1fr}.t{grid-template-columns:120px minmax(0,1fr)}.t .act{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}
+.tiet{margin-left:0}.ch-h{grid-template-columns:52px 1fr}.band img{aspect-ratio:16/9}}
+@media (max-width:640px){.mt .r{display:none}.band img{aspect-ratio:5/4}.band .tag{left:16px;top:auto;bottom:12%;max-width:calc(100% - 32px);line-height:1.5}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
+.t{grid-template-columns:1fr;gap:14px}.t .th{aspect-ratio:16/9}.t .act{flex-wrap:wrap;gap:10px}.map .cells a,.map .cells i{width:30px;height:30px}.ng{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -97,125 +109,120 @@ section{padding:72px 0;border-top:1px solid var(--line)}section.first{border-top
   <span class="sp"></span><nav class="links"><a href="#chuong-1">Tiết học</a><a href="#cach-dung">Cách dùng</a><a href="#noi-dung">Về nội dung</a></nav>
 </div></header>
 <main>
-<div class="wrap"><div class="hero">
-  <div>
-    <div class="eye">TEL1459 · Học phần đại học · 22 tiết</div>
-    <h1>Thiết kế và hiệu năng mạng</h1>
-    <p class="lead">Bài giảng 3D tương tác và giáo án 45 phút cho từng tiết học. Mỗi con số trên màn hình được tính từ mô hình thật: hàng đợi, độ sẵn sàng, ngân sách quang, vô tuyến.</p>
+<div class="wrap"><div class="mt"><div class="eye">TEL1459<br>Học phần đại học · 22 tiết · 6 chương</div><div class="eye r">Theo giáo trình của PGS.TS Hoàng Trọng Minh<br>Bài 3D chạy trực tiếp · giáo án 45 phút</div></div>
+<div class="hero">
+  <div><h1>Thiết kế và hiệu năng mạng</h1>
+    <div class="leg"><span class="chip xong">Hoàn chỉnh · 5</span><span class="chip so-bo">Bản sơ bộ · 10</span><span class="chip soan">Đang soạn · 7</span></div></div>
+  <div class="say"><h2>Mỗi tiết một cảnh 3D, mỗi con số tính từ mô hình</h2>
+    <p class="lead">Bài giảng 3D tương tác và giáo án 45 phút cho từng tiết. Hàng đợi, độ sẵn sàng, ngân sách quang, vô tuyến: số trên màn hình chạy từ chính công thức của giáo trình, đổi tham số là số đổi theo.</p>
     <p class="by">Theo giáo trình của <b>PGS.TS Hoàng Trọng Minh</b></p>
-    <div class="cta"><a class="btn pri" href="#chuong-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Xem 22 tiết</a><a class="btn" href="dich-vu/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Mở tiết 1</a></div>
-  </div>
-  <div class="map" aria-label="Tiến độ 22 tiết theo chương">
+    <div class="cta"><a class="btn pri" href="dich-vu/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Mở tiết 1</a><a class="btn" href="#chuong-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Xem 22 tiết</a></div></div>
+</div></div>
+<a class="band" href="dich-vu/" aria-label="Mở tiết 1: Thiết kế mạng bắt đầu từ dịch vụ"><img src="anh/tk-dich-vu.webp" alt="Cảnh 3D tiết 1: Thiết kế mạng bắt đầu từ dịch vụ"><span class="tag"><i>1</i>Tiết 1 · Thiết kế mạng bắt đầu từ dịch vụ</span></a>
+<div class="wrap">
+<div class="stats"><div><b>22<small>tiết</small></b><span>Mỗi tiết 45 phút</span></div><div><b>6<small>chương</small></b><span>Theo giáo trình</span></div><div><b>146</b><span>Công thức giữ số hiệu</span></div><div><b>74</b><span>Câu hỏi cuối chương</span></div></div>
+<div class="cards">
+  <div class="card map" aria-label="Tiến độ 22 tiết theo chương"><header><span>Tiến độ 22 tiết</span><span>01</span></header>
     <div class="r"><span>C1</span><div class="cells"><a class="xong" href="#tiet-1" title="Tiết 1 · Thiết kế mạng bắt đầu từ dịch vụ · Hoàn chỉnh">1</a><a class="xong" href="#tiet-2" title="Tiết 2 · Gói tin qua ba chặng · Hoàn chỉnh">2</a><a class="xong" href="#tiet-3" title="Tiết 3 · Khi hàng đợi đầy · Hoàn chỉnh">3</a><a class="xong" href="#tiet-4" title="Tiết 4 · Độ sẵn sàng, RTO và RPO · Hoàn chỉnh">4</a><a class="xong" href="#tiet-5" title="Tiết 5 · Vòng vận hành có kiểm chứng · Hoàn chỉnh">5</a></div></div><div class="r"><span>C2</span><div class="cells"><a class="soan" href="#tiet-6" title="Tiết 6 · Từ &quot;mạng phải nhanh&quot; đến vector yêu cầu · Đang soạn">6</a><a class="so-bo" href="#tiet-7" title="Tiết 7 · Đếm tải thật · Bản sơ bộ">7</a><a class="soan" href="#tiet-8" title="Tiết 8 · Yêu cầu mới của 5G-Advanced và 6G · Đang soạn">8</a><a class="soan" href="#tiet-9" title="Tiết 9 · Rủi ro, đặc tả và truy vết · Đang soạn">9</a></div></div><div class="r"><span>C3</span><div class="cells"><a class="soan" href="#tiet-10" title="Tiết 10 · Kiến trúc thành phần mạng · Đang soạn">10</a><a class="so-bo" href="#tiet-11" title="Tiết 11 · Mô hình kiến trúc và chia địa chỉ VLSM · Bản sơ bộ">11</a><a class="so-bo" href="#tiet-12" title="Tiết 12 · Định tuyến, ECMP và hội tụ · Bản sơ bộ">12</a><a class="so-bo" href="#tiet-13" title="Tiết 13 · Underlay, overlay và thiết kế logic 5G · Bản sơ bộ">13</a></div></div><div class="r"><span>C4</span><div class="cells"><a class="so-bo" href="#tiet-14" title="Tiết 14 · Tòa nhà 8 tầng: tủ mạng, cáp và PoE · Bản sơ bộ">14</a><a class="so-bo" href="#tiet-15" title="Tiết 15 · Môi trường truyền dẫn và ngân sách quang · Bản sơ bộ">15</a><a class="so-bo" href="#tiet-16" title="Tiết 16 · Wi-Fi, 5G và nghiệm thu vật lý · Bản sơ bộ">16</a></div></div><div class="r"><span>C5</span><div class="cells"><a class="so-bo" href="#tiet-17" title="Tiết 17 · Phòng đo · Bản sơ bộ">17</a><a class="so-bo" href="#tiet-18" title="Tiết 18 · Tối ưu mạng: hàng đợi và QoS · Bản sơ bộ">18</a><a class="soan" href="#tiet-19" title="Tiết 19 · Kiểm thử 5G-Advanced và tối ưu vòng kín · Đang soạn">19</a></div></div><div class="r"><span>C6</span><div class="cells"><a class="so-bo" href="#tiet-20" title="Tiết 20 · Gói tin 5G đầu-cuối và vị trí UPF · Bản sơ bộ">20</a><a class="soan" href="#tiet-21" title="Tiết 21 · NSA, SA và hạ tầng vô tuyến · Đang soạn">21</a><a class="soan" href="#tiet-22" title="Tiết 22 · Slicing, bảo mật, vận hành và hướng 6G · Đang soạn">22</a></div></div>
-    <div class="lg"><span><i style="background:var(--ink)"></i>Hoàn chỉnh · 5</span><span><i style="box-shadow:inset 0 0 0 1.5px var(--ink)"></i>Bản sơ bộ · 10</span><span><i style="background:var(--soft);box-shadow:inset 0 0 0 1px var(--line)"></i>Đang soạn · 7</span></div>
+    <div class="lg"><span class="chip xong">Hoàn chỉnh · 5</span><span class="chip so-bo">Sơ bộ · 10</span><span class="chip soan">Đang soạn · 7</span></div>
+  </div>
+  <div class="card dung" id="cach-dung"><header><span>Một tiết trên lớp</span><span>02</span></header>
+    <ol><li><span><b>Mở bài 3D trên máy chiếu.</b> Bài tự chạy như một bài giảng; bấm vào cảnh để tự điều khiển, <kbd>←</kbd> <kbd>→</kbd> chuyển bước, <kbd>F</kbd> toàn màn hình.</span></li>
+      <li><span><b>Bật màn hình giảng viên.</b> Nút Lên lớp mở cửa sổ riêng: phút dự kiến, việc của giảng viên và sinh viên ở từng bước, đồng hồ tiết học.</span></li>
+      <li><span><b>In giáo án và phiếu.</b> Mục tiêu, diễn tiến theo phút, ví dụ giải mẫu, phiếu A4 lấy câu hỏi cuối chương, đáp án, kiểm tra nhanh.</span></li></ol>
   </div>
 </div>
-<div class="stats"><div><b>22</b><span>tiết, mỗi tiết 45 phút</span></div><div><b>6</b><span>chương</span></div><div><b>146</b><span>công thức giữ đúng số hiệu</span></div><div><b>74</b><span>câu hỏi cuối chương</span></div></div>
 </div>
 <section class="ch" id="chuong-1"><div class="wrap">
-  <div class="ch-h"><span class="num">01</span><div><h2>Tổng quan về thiết kế và hiệu năng mạng</h2><p>5 tiết · tiết 1–5</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-1"><a class="th" href="dich-vu/" tabindex="-1" aria-hidden="true"><img src="anh/tk-dich-vu.webp" alt="" loading="lazy"></a>
+  <div class="ch-h"><span class="num">C01</span><div><h2>Tổng quan về thiết kế và hiệu năng mạng</h2><p>5 tiết · tiết 1–5</p></div></div>
+  <ol class="tiet"><li class="t xong" id="tiet-1"><a class="th" href="dich-vu/" tabindex="-1" aria-hidden="true"><img src="anh/tk-dich-vu.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 01 · mục 1.1–1.5 · tr. 1–13</div><h3><a href="dich-vu/">Thiết kế mạng bắt đầu từ dịch vụ</a></h3><p>Chu trình thiết kế và kiểm chứng; dịch vụ, QoS, SLA, metric; mạng như một hệ thống; vector yêu cầu và điều kiện nghiệm thu</p>
   <div class="pt">PT 1.1–1.6, 1.8 · Bài tập C1.1, C1.2, C1.7</div></div>
-  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="dich-vu/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="dich-vu/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t" id="tiet-2"><a class="th" href="goi-tin/" tabindex="-1" aria-hidden="true"><img src="anh/tk-goi-tin.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="dich-vu/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="dich-vu/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t xong" id="tiet-2"><a class="th" href="goi-tin/" tabindex="-1" aria-hidden="true"><img src="anh/tk-goi-tin.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 02 · mục 1.5.2, 1.6.1 · tr. 13–14</div><h3><a href="goi-tin/">Gói tin qua ba chặng</a></h3><p>Mức sử dụng và dư địa; độ trễ đầu cuối bốn thành phần; trễ hàng đợi từ mô phỏng so với M/M/1; thời gian đáp ứng</p>
   <div class="pt">PT 1.7, 1.9–1.12 · Bài tập C1.3, C1.4</div></div>
-  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="goi-tin/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="goi-tin/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t" id="tiet-3"><a class="th" href="hang-doi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-hang-doi.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="goi-tin/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="goi-tin/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t xong" id="tiet-3"><a class="th" href="hang-doi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-hang-doi.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 03 · mục 1.6.2–1.6.4 · tr. 14–16</div><h3><a href="hang-doi/">Khi hàng đợi đầy</a></h3><p>Bộ đệm K gói: mất gói, biến thiên trễ, lỗi bit, thông lượng và goodput; bộ đệm lớn có tốt hơn?</p>
   <div class="pt">PT 1.13–1.18 · Bài tập C1.5</div></div>
-  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="hang-doi/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="hang-doi/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t" id="tiet-4"><a class="th" href="san-sang/" tabindex="-1" aria-hidden="true"><img src="anh/tk-san-sang.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="hang-doi/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="hang-doi/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t xong" id="tiet-4"><a class="th" href="san-sang/" tabindex="-1" aria-hidden="true"><img src="anh/tk-san-sang.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 04 · mục 1.6.5 · tr. 16–18</div><h3><a href="san-sang/">Độ sẵn sàng, RTO và RPO</a></h3><p>MTBF, MTTR; hai đường lên chung một ống hay tách hai ngả; đồng hồ phục hồi bốn pha; công thức so với Monte Carlo</p>
   <div class="pt">PT 1.19, 2.17–2.19, 4.14 · Bài tập C2.8</div></div>
-  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="san-sang/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="san-sang/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t" id="tiet-5"><a class="th" href="van-hanh/" tabindex="-1" aria-hidden="true"><img src="anh/tk-van-hanh.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="san-sang/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="san-sang/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li><li class="t xong" id="tiet-5"><a class="th" href="van-hanh/" tabindex="-1" aria-hidden="true"><img src="anh/tk-van-hanh.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 05 · mục 1.7–1.10 · tr. 18–30</div><h3><a href="van-hanh/">Vòng vận hành có kiểm chứng</a></h3><p>Ba hướng đánh giá; telemetry và sai lệch Δk; nền tảng 5G-Advanced và 6G; ràng buộc mới; độ phủ quan sát Γ</p>
   <div class="pt">PT 1.20–1.28 · Bài tập C1.6, C1.8–C1.13</div></div>
   <div class="act"><span class="chip xong">Hoàn chỉnh</span><div class="b"><a class="btn sm pri" href="van-hanh/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><a class="btn sm" href="van-hanh/giao-an/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5M9 12.5h6M9 16h6"/></svg>Giáo án</a></div></div></li></ol>
 </div></section><section class="ch" id="chuong-2"><div class="wrap">
-  <div class="ch-h"><span class="num">02</span><div><h2>Phân tích yêu cầu thiết kế mạng</h2><p>4 tiết · tiết 6–9</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-6"><span class="th trong">Đang soạn</span>
+  <div class="ch-h"><span class="num">C02</span><div><h2>Phân tích yêu cầu thiết kế mạng</h2><p>4 tiết · tiết 6–9</p></div></div>
+  <ol class="tiet"><li class="t soan" id="tiet-6"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 06 · mục 2.1, 2.2.2–2.2.3 · tr. 38–46</div><h3>Từ &quot;mạng phải nhanh&quot; đến vector yêu cầu</h3><p>Yêu cầu chức năng và phi chức năng; yêu cầu tốt; vector yêu cầu và điểm ưu tiên; QoE, QoS, SLA, SLO, KPI; lớp dịch vụ</p>
   <div class="pt">PT 2.1, 2.2, 2.5, 2.6 · Bài tập C2.1–C2.4</div></div>
-  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-7"><a class="th" href="dem-tai/" tabindex="-1" aria-hidden="true"><img src="anh/tk-tai.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-7"><a class="th" href="dem-tai/" tabindex="-1" aria-hidden="true"><img src="anh/tk-tai.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 07 · mục 2.2.1, 2.2.4, 2.3 · tr. 43–51</div><h3><a href="dem-tai/">Đếm tải thật</a></h3><p>Hệ số đồng thời, tải dịch vụ, phân vị 95; ma trận lưu lượng; tốc độ hữu dụng; dung lượng liên kết</p>
   <div class="pt">PT 2.3, 2.4, 2.7–2.11 · Bài tập C2.5–C2.7</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="dem-tai/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-8"><span class="th trong">Đang soạn</span>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="dem-tai/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t soan" id="tiet-8"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 08 · mục 2.4 · tr. 51–56</div><h3>Yêu cầu mới của 5G-Advanced và 6G</h3><p>QoS flow; slice theo tài nguyên; vị trí xử lý MEC; O-RAN, SDN, NFV; AI; NTN, UAV; ISAC</p>
   <div class="pt">PT 2.12–2.16 · Bài tập C2.13–C2.15</div></div>
-  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-9"><span class="th trong">Đang soạn</span>
+  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t soan" id="tiet-9"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 09 · mục 2.5–2.6 · tr. 56–63</div><h3>Rủi ro, đặc tả và truy vết</h3><p>RMA và miền lỗi; rủi ro an toàn thông tin; đặc trưng hoá lưu lượng; ma trận truy vết; mẫu đặc tả</p>
   <div class="pt">PT 2.17–2.20 · Bài tập C2.9–C2.12</div></div>
   <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li></ol>
 </div></section><section class="ch" id="chuong-3"><div class="wrap">
-  <div class="ch-h"><span class="num">03</span><div><h2>Thiết kế mạng logic</h2><p>4 tiết · tiết 10–13</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-10"><span class="th trong">Đang soạn</span>
+  <div class="ch-h"><span class="num">C03</span><div><h2>Thiết kế mạng logic</h2><p>4 tiết · tiết 10–13</p></div></div>
+  <ol class="tiet"><li class="t soan" id="tiet-10"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 10 · mục 3.1–3.2 · tr. 69–79</div><h3>Kiến trúc thành phần mạng</h3><p>Nguyên tắc thiết kế logic; chức năng, khả năng, cơ chế; thành phần địa chỉ, quản lý, hiệu năng, bảo mật; tối ưu kiến trúc</p>
   <div class="pt">PT 3.1–3.13 · Bài tập C3.1, C3.2, C3.9, C3.10</div></div>
-  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-11"><a class="th" href="vlsm/" tabindex="-1" aria-hidden="true"><img src="anh/tk-vlsm.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-11"><a class="th" href="vlsm/" tabindex="-1" aria-hidden="true"><img src="anh/tk-vlsm.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 11 · mục 3.3, 3.4.1 · tr. 79–85</div><h3><a href="vlsm/">Mô hình kiến trúc và chia địa chỉ VLSM</a></h3><p>Mô hình topo, luồng, chức năng; tiền tố theo tăng trưởng, căn biên, gộp tuyến</p>
   <div class="pt">PT 3.4–3.8, 3.14, 3.15 · Bài tập C3.3–C3.5</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="vlsm/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-12"><a class="th" href="dinh-tuyen/" tabindex="-1" aria-hidden="true"><img src="anh/tk-dinh-tuyen.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="vlsm/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-12"><a class="th" href="dinh-tuyen/" tabindex="-1" aria-hidden="true"><img src="anh/tk-dinh-tuyen.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 12 · mục 3.4.2 · tr. 85–88</div><h3><a href="dinh-tuyen/">Định tuyến, ECMP và hội tụ</a></h3><p>Chi phí đường đi, Dijkstra; ECMP chia đều hay băm; đổi metric; hội tụ bốn pha</p>
   <div class="pt">PT 3.16–3.19 · Bài tập C3.6, C3.7</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="dinh-tuyen/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-13"><a class="th" href="overlay/" tabindex="-1" aria-hidden="true"><img src="anh/tk-overlay.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="dinh-tuyen/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-13"><a class="th" href="overlay/" tabindex="-1" aria-hidden="true"><img src="anh/tk-overlay.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 13 · mục 3.4.3, 3.5, 3.6 · tr. 88–94</div><h3><a href="overlay/">Underlay, overlay và thiết kế logic 5G</a></h3><p>Leaf-spine và VXLAN/EVPN; tenant; 5GS, slicing, MEC, O-RAN trong thiết kế logic; ma trận truy vết</p>
   <div class="pt">PT 3.20–3.25 · Bài tập C3.8, C3.11, C3.12</div></div>
   <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="overlay/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li></ol>
 </div></section><section class="ch" id="chuong-4"><div class="wrap">
-  <div class="ch-h"><span class="num">04</span><div><h2>Thiết kế mạng vật lý</h2><p>3 tiết · tiết 14–16</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-14"><a class="th" href="toa-nha/" tabindex="-1" aria-hidden="true"><img src="anh/tk-toa-nha.webp" alt="" loading="lazy"></a>
+  <div class="ch-h"><span class="num">C04</span><div><h2>Thiết kế mạng vật lý</h2><p>3 tiết · tiết 14–16</p></div></div>
+  <ol class="tiet"><li class="t so-bo" id="tiet-14"><a class="th" href="toa-nha/" tabindex="-1" aria-hidden="true"><img src="anh/tk-toa-nha.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 14 · mục 4.1, 4.2.1–4.2.2, 4.2.5, 4.3, 4.4.4 · tr. 99–113</div><h3><a href="toa-nha/">Tòa nhà 8 tầng: tủ mạng, cáp và PoE</a></h3><p>Khảo sát; IDF mỗi tầng hay kéo về MDF; giới hạn 90 m; số cổng, Ω; PoE, UPS; sơ đồ và hồ sơ</p>
   <div class="pt">PT 4.1, 4.3, 4.5, 4.7–4.9, 4.15, 4.16 · Bài tập C4.1–C4.3, C4.5–C4.7, C4.12</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="toa-nha/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-15"><a class="th" href="quang/" tabindex="-1" aria-hidden="true"><img src="anh/tk-quang.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="toa-nha/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-15"><a class="th" href="quang/" tabindex="-1" aria-hidden="true"><img src="anh/tk-quang.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 15 · mục 4.2.3, 4.4.1–4.4.3 · tr. 104–112</div><h3><a href="quang/">Môi trường truyền dẫn và ngân sách quang</a></h3><p>Cáp đồng, quang đa mode, đơn mode; công suất thu; dung lượng, trễ tuần tự, dự phòng</p>
   <div class="pt">PT 4.2, 4.4, 4.10–4.14 · Bài tập C4.4</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="quang/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-16"><a class="th" href="wifi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-wifi.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="quang/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-16"><a class="th" href="wifi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-wifi.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 16 · mục 4.2.4, 4.4.5–4.6 · tr. 105–117</div><h3><a href="wifi/">Wi-Fi, 5G và nghiệm thu vật lý</a></h3><p>Tốc độ PHY và thông lượng thật; QoS tại biên; hạ tầng 5G, fronthaul; nghiệm thu</p>
   <div class="pt">PT 4.6, 4.17–4.19 · Bài tập C4.8–C4.11</div></div>
   <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="wifi/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li></ol>
 </div></section><section class="ch" id="chuong-5"><div class="wrap">
-  <div class="ch-h"><span class="num">05</span><div><h2>Kiểm thử và đánh giá hiệu năng mạng</h2><p>3 tiết · tiết 17–19</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-17"><a class="th" href="phong-do/" tabindex="-1" aria-hidden="true"><img src="anh/tk-phong-do.webp" alt="" loading="lazy"></a>
+  <div class="ch-h"><span class="num">C05</span><div><h2>Kiểm thử và đánh giá hiệu năng mạng</h2><p>3 tiết · tiết 17–19</p></div></div>
+  <ol class="tiet"><li class="t so-bo" id="tiet-17"><a class="th" href="phong-do/" tabindex="-1" aria-hidden="true"><img src="anh/tk-phong-do.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 17 · mục 5.1, 5.3, 5.5 · tr. 121–140</div><h3><a href="phong-do/">Phòng đo</a></h3><p>Mô hình hoá; trạng thái và sự kiện; thống kê kết quả đo; kiểm thử chuẩn; kế hoạch thử; đọc kết quả theo chuỗi nguyên nhân</p>
   <div class="pt">PT 5.1–5.11, 5.18–5.23, 5.30 · Bài tập C5.1, C5.3, C5.5, C5.6</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="phong-do/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-18"><a class="th" href="qos/" tabindex="-1" aria-hidden="true"><img src="anh/tk-qos.webp" alt="" loading="lazy"></a>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="phong-do/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t so-bo" id="tiet-18"><a class="th" href="qos/" tabindex="-1" aria-hidden="true"><img src="anh/tk-qos.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 18 · mục 5.2 · tr. 126–130</div><h3><a href="qos/">Tối ưu mạng: hàng đợi và QoS</a></h3><p>Tối ưu theo nút nghẽn; multicast; trễ tuần tự hoá; DiffServ, DSCP, ECN; ưu tiên có giới hạn</p>
   <div class="pt">PT 5.12–5.17 · Bài tập C5.2, C5.4</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="qos/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-19"><span class="th trong">Đang soạn</span>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="qos/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t soan" id="tiet-19"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 19 · mục 5.4 · tr. 134–138</div><h3>Kiểm thử 5G-Advanced và tối ưu vòng kín</h3><p>Kiểm thử slice và SLA; MEC, O-RAN; NTN, UAV, ISAC; telemetry, assurance, vòng kín</p>
   <div class="pt">PT 5.24–5.29 · Bài tập C5.7–C5.12</div></div>
   <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li></ol>
 </div></section><section class="ch" id="chuong-6"><div class="wrap">
-  <div class="ch-h"><span class="num">06</span><div><h2>Các mô hình thiết kế và vận hành mạng 5G</h2><p>3 tiết · tiết 20–22</p></div></div>
-  <ol class="tiet"><li class="t" id="tiet-20"><a class="th" href="5g-dau-cuoi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-5g.webp" alt="" loading="lazy"></a>
+  <div class="ch-h"><span class="num">C06</span><div><h2>Các mô hình thiết kế và vận hành mạng 5G</h2><p>3 tiết · tiết 20–22</p></div></div>
+  <ol class="tiet"><li class="t so-bo" id="tiet-20"><a class="th" href="5g-dau-cuoi/" tabindex="-1" aria-hidden="true"><img src="anh/tk-5g.webp" alt="" loading="lazy"></a>
   <div><div class="k">Tiết 20 · mục 6.1, 6.3.3 · tr. 146–152</div><h3><a href="5g-dau-cuoi/">Gói tin 5G đầu-cuối và vị trí UPF</a></h3><p>Khối kiến trúc 5GS; mặt phẳng điều khiển và người dùng; UPF ở biên, vùng hay trung tâm; ngân sách trễ</p>
   <div class="pt">PT 6.1–6.3, 6.8, 6.9 · Bài tập C6.1, C6.4</div></div>
-  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="5g-dau-cuoi/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-21"><span class="th trong">Đang soạn</span>
+  <div class="act"><span class="chip so-bo">Bản sơ bộ</span><div class="b"><a class="btn sm pri" href="5g-dau-cuoi/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Bài 3D</a><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t soan" id="tiet-21"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 21 · mục 6.2, 6.3.1–6.3.2, 6.4.1–6.4.2 · tr. 148–154</div><h3>NSA, SA và hạ tầng vô tuyến</h3><p>NSA và nút thắt neo LTE; SA và lõi SBA; PDU session, QoS flow, 5QI; vùng phủ, dung lượng, fronthaul, đồng bộ</p>
   <div class="pt">PT 6.4–6.7, 6.10–6.12 · Bài tập C6.2, C6.3, C6.5</div></div>
-  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t" id="tiet-22"><span class="th trong">Đang soạn</span>
+  <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li><li class="t soan" id="tiet-22"><span class="th trong">Đang soạn</span>
   <div><div class="k">Tiết 22 · mục 6.4.3–6.6 · tr. 154–159</div><h3>Slicing, bảo mật, vận hành và hướng 6G</h3><p>MEC, NFV, cloud-native, O-RAN; network slicing; bảo mật; điều phối tự động; kiểm chứng 5G; IMT-2030</p>
   <div class="pt">PT 6.13–6.18 · Bài tập C6.6–C6.10</div></div>
   <div class="act"><span class="chip soan">Đang soạn</span><div class="b"><span class="btn sm" aria-disabled="true">Bài 3D</span><span class="btn sm" aria-disabled="true">Giáo án</span></div></div></li></ol>
 </div></section>
-<section id="cach-dung"><div class="wrap">
-  <div class="sh"><div><div class="eye">Cách dùng</div><h2 style="margin-top:10px">Một tiết học trên lớp</h2><p>Mỗi tiết hoàn chỉnh gồm bài 3D có lời giảng từng bước và giáo án in được, cùng tên bước và thứ tự.</p></div></div>
-  <div class="cach">
-    <div><b>01</b><h3>Mở bài 3D trên máy chiếu</h3><p>Bài tự chạy như một bài giảng. Bấm vào cảnh để tự điều khiển; <kbd>←</kbd> <kbd>→</kbd> chuyển bước, <kbd>B</kbd> màn đen, <kbd>F</kbd> toàn màn hình.</p></div>
-    <div><b>02</b><h3>Bật màn hình giảng viên</h3><p>Nút <b>Lên lớp</b> mở cửa sổ riêng cho máy giảng viên: phút dự kiến, việc của giảng viên và sinh viên ở từng bước, đồng hồ tiết học.</p></div>
-    <div><b>03</b><h3>In giáo án và phiếu</h3><p>Giáo án có mục tiêu, diễn tiến theo phút, ví dụ giải mẫu, phiếu bài tập A4 lấy câu hỏi cuối chương, đáp án và câu kiểm tra nhanh.</p></div>
-  </div>
-</div></section>
 <section id="noi-dung"><div class="wrap">
-  <div class="sh"><div><div class="eye">Về nội dung</div><h2 style="margin-top:10px">Bám giáo trình, kiểm bằng máy</h2></div></div>
-  <div class="ng">
-    <ul><li>Mô phỏng khớp M/M/1 ở ρ 0,5, 0,8, 0,9 (sai lệch dưới 1 %), M/D/1, M/M/1/K (cả khi quá tải ρ = 1,3) và M/M/c (Erlang C)</li><li>Monte Carlo độ sẵn sàng khớp công thức nối tiếp 1.19 và song song 4.14</li><li>Bài tập có đáp số của giáo trình tính lại bằng máy mỗi lần dựng: ví dụ tr.43 (1 050 Mbit/s), BT 1.4, 2.5, 2.8, 3.3, 4.3, 4.5, 5.2</li><li>Mỗi số ngoài giáo trình có nguồn hoặc ghi rõ là giả định ngay cạnh con số</li></ul>
-    <ul><li>Lời giảng viết mới theo giáo trình Thiết kế và hiệu năng mạng (TEL1459) của PGS.TS Hoàng Trọng Minh; không chép văn bản hay hình của sách.</li>
-      <li>Công thức giữ đúng số hiệu của giáo trình để sinh viên tra lại.</li>
-      <li>Tiết <b>hoàn chỉnh</b> có bài 3D 13 bước và giáo án. Tiết <b>sơ bộ</b> có bài 3D, lời giảng đang được viết lại theo chuẩn tiết 45 phút.</li>
-      <li>Chạy trên trình duyệt Chrome hoặc Edge bản mới, không cần cài đặt.</li></ul>
-  </div>
+  <div class="sh"><div><div class="eye">Về nội dung</div><h2 style="margin-top:8px">Bám giáo trình, kiểm bằng máy</h2></div></div>
+  <div class="ng"><div><span class="n">01</span><p><b>Lời giảng viết mới</b>Theo giáo trình Thiết kế và hiệu năng mạng (TEL1459) của PGS.TS Hoàng Trọng Minh; không chép văn bản hay hình của sách.</p></div><div><span class="n">02</span><p><b>Giữ số hiệu công thức</b>Công thức đánh đúng số hiệu của giáo trình để sinh viên tra lại.</p></div><div><span class="n">03</span><p><b>Hoàn chỉnh và sơ bộ</b>Tiết hoàn chỉnh có bài 3D 13 bước và giáo án; tiết sơ bộ có bài 3D, lời giảng đang viết lại theo chuẩn tiết 45 phút.</p></div><div><span class="n">04</span><p><b>Không cần cài đặt</b>Chạy trên Chrome hoặc Edge bản mới, máy chiếu hay máy tính bảng.</p></div><div><span class="n">05</span><p><b>Mô phỏng hàng đợi</b>Mô phỏng khớp M/M/1 ở ρ 0,5, 0,8, 0,9 (sai lệch dưới 1 %), M/D/1, M/M/1/K (cả khi quá tải ρ = 1,3) và M/M/c (Erlang C)</p></div><div><span class="n">06</span><p><b>Monte Carlo độ sẵn sàng</b>Monte Carlo độ sẵn sàng khớp công thức nối tiếp 1.19 và song song 4.14</p></div><div><span class="n">07</span><p><b>Đáp số tính lại</b>Bài tập có đáp số của giáo trình tính lại bằng máy mỗi lần dựng: ví dụ tr.43 (1 050 Mbit/s), BT 1.4, 2.5, 2.8, 3.3, 4.3, 4.5, 5.2</p></div><div><span class="n">08</span><p><b>Mỗi số có nguồn</b>Mỗi số ngoài giáo trình có nguồn hoặc ghi rõ là giả định ngay cạnh con số</p></div></div>
 </div></section>
 </main>
-<footer class="foot"><div class="wrap in"><span>Thiết kế và hiệu năng mạng · TEL1459 · Theo giáo trình của PGS.TS Hoàng Trọng Minh</span><span>Bản dựng 17/11/2026</span></div></footer>
+<footer class="foot"><div class="wrap in"><span>TEL1459 · Thiết kế và hiệu năng mạng · Theo giáo trình của PGS.TS Hoàng Trọng Minh</span><span class="r">Bản dựng 17/11/2026</span></div></footer>
 </body>
 </html>
